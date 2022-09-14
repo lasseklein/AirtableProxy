@@ -15,7 +15,7 @@ exports.handler = async (event, context) => {
             function (err,records) {
                 if (err) {console.error(err); return; }
                 records.forEach(function (record) {
-                    console.log(record.getId())
+                   // console.log(record.getId())
                 })
             }
         )

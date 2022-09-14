@@ -7,7 +7,7 @@ const table = base(process.env.AIRTABLE_TABLE_NAME)
 exports.handler = async (event) => {
     if (event['httpMethod'] === 'POST') {
         const data = [{'fields': JSON.parse(event.body)}]
-        await table.create(data, {typecast: true} )
+        table.create(data, {typecast: true} )
         return { statusCode: 200, body: 'Success!' }
     }
     return { statusCode: 500, body: 'Nay!' }

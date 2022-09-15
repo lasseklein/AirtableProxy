@@ -1,11 +1,12 @@
-require('dotenv').config()
 const Airtable = require('airtable')
 Airtable.configure({apiKey: process.env.AIRTABLE_API_KEY})
 
 const projects = {
     "MyPages": {
-        "baseID": process.env.AIRTABLE_BASE_ID,
-        "pages" : { "Cancel": process.env.AIRTABLE_TABLE_NAME }
+        "baseID": 'appYKMog2dsOA8Esn',
+        "pages" : {
+            "Cancel": 'FeedbackForm'
+        }
     }
 }
 
@@ -35,12 +36,10 @@ exports.handler = async (event) => {
             const records = await airtablePromise(base, pageID, data)
             const record = (records.length) ? records[0].getId() : ''
             return {statusCode: 200, 'body': record }
-
         }
         catch {
             return { statusCode: 500, 'body': 'noe gikk galt' }
         }
-
     }
     return { statusCode: 500, body: 'Dunno!' }
 }

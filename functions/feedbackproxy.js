@@ -41,5 +41,5 @@ exports.handler = async (event) => {
             return { statusCode: 500, 'body': 'noe gikk galt' }
         }
     }
-    return { statusCode: 500, body: 'Dunno!' }
+    return { statusCode: 500, body: 'Bummer!' }
 }

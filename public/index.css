@@ -67,28 +67,28 @@ xinput#rate-5:checked  label{
     color: #fe7;
     text-shadow: 0 0 20px #952;
 }
-#xrate-1:checked ~ #reason header:before{
+#xrate-1:checked ~ #followUp header:before{
     content: "I just hate it ";
 }
-#xrate-2:checked ~ #reason header:before{
+#xrate-2:checked ~ #followUp header:before{
     content: "I don't like it ";
 }
-#xrate-3:checked ~ #reason header:before{
+#xrate-3:checked ~ #followUp header:before{
     content: "It is awesome ";
 }
-#xrate-4:checked ~ #reason header:before{
+#xrate-4:checked ~ #followUp header:before{
     content: "I just like it ";
 }
-#xrate-5:checked ~ #reason header:before{
+#xrate-5:checked ~ #followUp header:before{
     content: "I just love it ";
 }
-.container #reason{
+.container #followUp{
     display: none;
 }
-input:checked ~ #reason{
+input:checked ~ #followUp{
     display: block;
 }
-#reason header{
+#followUp header{
     width: 100%;
     font-size: 25px;
     color: #fe7;
@@ -97,12 +97,12 @@ input:checked ~ #reason{
     text-align: center;
     transition: all 0.2s ease;
 }
-#reason .textarea{
+#followUp .textarea{
     height: 100px;
     width: 100%;
     overflow: hidden;
 }
-#reason .textarea textarea{
+#followUp .textarea textarea{
     height: 100%;
     width: 100%;
     outline: none;
@@ -116,12 +116,12 @@ input:checked ~ #reason{
 .textarea textarea:focus{
     border-color: #444;
 }
-#reason .btn{
+#followUp .btn{
     height: 45px;
     width: 100%;
     margin: 15px 0;
 }
-#reason .btn button{
+#followUp .btn button{
     height: 100%;
     width: 100%;
     border: 1px solid #444;
@@ -134,6 +134,6 @@ input:checked ~ #reason{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-#reason .btn button:hover{
+#followUp .btn button:hover{
     background: #1b1b1b;
 }

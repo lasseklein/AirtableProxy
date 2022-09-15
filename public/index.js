@@ -1,42 +1,19 @@
-const btn = document.querySelector("button");
-const form = document.querySelector("form");
-const post = document.querySelector(".post");
-const widget = document.querySelector(".star-widget");
 
-const json = {
-    "project": "MyPages",
-    "page": "Cancel",
-    "feedback": {
-        "Rating": 5,
-        "Reason": "Squirrel!",
-        "OtherReason": "Test",
-        "Product": "Test i prod",
-        "Referrer": "Postman",
-        "Browser": "None"
-    }
-}
+const endPoint = "/.netlify/functions/feedbackproxy"
 
-if(0)fetch("https://atproxy.netlify.app/.netlify/functions/feedbackproxy",         {
-    method: "POST",
-    headers: {'Content-Type': 'application/json'},
-    body: JSON.stringify(json)
-}).then(res => {
-    console.log("Request complete! response:", res);
-})
-    .catch((err) => {console.log('err '+err.message)})
 function handleSubmit(event) {
-    event.preventDefault();
-    widget.style.display = "none";
-    post.style.display = "block";
+    event.preventDefault()
+    document.querySelector(".star-widget").style.display = "none"
+    document.querySelector(".post").style.display = "block"
 
-    const { rating, thereason } = event.target.elements
+    const { rating, reason } = event.target.elements
 
     const json = {
         "project": "MyPages",
         "page": "Cancel",
         "feedback": {
             "Rating": rating.value,
-            "Reason": thereason.value,
+            "Reason": reason.value,
             "OtherReason": "Test",
             "Product": "Test i prod",
             "Referrer": "Postman",
@@ -44,18 +21,16 @@ function handleSubmit(event) {
         }
     }
 
-    console.log({json})
-    //JSON.stringify(json)
-    fetch("https://atproxy.netlify.app/.netlify/functions/feedbackproxy",         {
-        method: "POST",
-        mode: 'no-cors',
-        body: JSON.stringify(json)
-    }).then(res => {
-        console.log("Request complete! response:", res);
-    })
+    fetch( endPoint,
+        {
+            method: "POST",
+            mode: 'no-cors',
+            body: JSON.stringify(json)
+         })
+        .then(res => {console.log("Request complete! response:", res)})
         .catch((err) => {console.log('err '+err.message)})
-
-    return false;
+    return false
 }
-form.addEventListener('submit', handleSubmit);
+
+ document.querySelector("form").addEventListener('submit', handleSubmit);
 

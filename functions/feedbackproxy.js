@@ -1,9 +1,9 @@
 const Airtable = require('airtable')
 Airtable.configure({apiKey: process.env.AIRTABLE_API_KEY})
 const CORS_HEADERS = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers':
-        'Origin, X-Requested-With, Content-Type, Accept',
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Headers": "Content-Type",
+    "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
 }
 
 const projects = {
@@ -28,7 +28,14 @@ const airtablePromise = (base, pageID, data) => {
 }
 
 exports.handler = async (event) => {
-    if (event['httpMethod'] === 'POST') {
+    if (event.httpMethod === "OPTIONS") {
+        return {
+            statusCode: 200,
+            CORS_HEADERS,
+            body: JSON.stringify({message: "Successful preflight call."}),
+        }
+    }
+    else if (event['httpMethod'] === 'POST') {
         const body     = JSON.parse(event.body)
         const project  = projects[ body['project'] ]
         const baseID   = project['baseID']
@@ -42,7 +49,7 @@ exports.handler = async (event) => {
             const record = (records.length) ? records[0].getId() : ''
             return {
                 statusCode: 200,
-                headers: CORS_HEADERS,
+                CORS_HEADERS,
                 'body': record }
         }
         catch {

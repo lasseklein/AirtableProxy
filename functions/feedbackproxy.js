@@ -38,8 +38,8 @@ exports.handler = async (event) => {
             return {statusCode: 200, 'body': record }
         }
         catch {
-            return { statusCode: 500, 'body': 'noe gikk galt' }
+            return { statusCode: 200, 'body': 'noe gikk galt' }
         }
     }
-    return { statusCode: 500, body: 'Bummer!' }
+    return { statusCode: 200, body: 'Bummer!' }
 }

@@ -23,14 +23,13 @@ const airtablePromise = (base, pageID, data) => {
 
 exports.handler = async (event) => {
     if (event['httpMethod'] === 'POST') {
-        const body = JSON.parse(event.body)
+        const body     = JSON.parse(event.body)
         const project  = projects[ body['project'] ]
         const baseID   = project['baseID']
         const pageID   = project['pages'][ body['page'] ]
         const feedBack = body['feedback']
         const base     = Airtable.base(baseID)
-
-        const data = [{ 'fields': feedBack  }]
+        const data     = [{ 'fields': feedBack  }]
 
         try {
             const records = await airtablePromise(base, pageID, data)

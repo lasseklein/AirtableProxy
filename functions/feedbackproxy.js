@@ -42,7 +42,7 @@ exports.handler = async (event) => {
             const record = (records.length) ? records[0].getId() : ''
             return {
                 statusCode: 200,
-                ..CORS_HEADERS,
+                headers: CORS_HEADERS,
                 'body': record }
         }
         catch {

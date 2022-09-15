@@ -1,3 +1,7 @@
 [build]
   functions = "functions"
   port = 9000
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"

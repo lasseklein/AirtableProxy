@@ -48,8 +48,8 @@ function handleSubmit(event) {
     //JSON.stringify(json)
     fetch("https://atproxy.netlify.app/.netlify/functions/feedbackproxy",         {
         method: "POST",
-
-        body: json
+        mode: 'no-cors',
+        body: JSON.stringify(json)
     }).then(res => {
         console.log("Request complete! response:", res);
     })

@@ -1,5 +1,10 @@
 const Airtable = require('airtable')
 Airtable.configure({apiKey: process.env.AIRTABLE_API_KEY})
+const CORS_HEADERS = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Headers':
+        'Origin, X-Requested-With, Content-Type, Accept',
+}
 
 const projects = {
     "MyPages": {
@@ -35,7 +40,10 @@ exports.handler = async (event) => {
         try {
             const records = await airtablePromise(base, pageID, data)
             const record = (records.length) ? records[0].getId() : ''
-            return {statusCode: 200, 'body': record }
+            return {
+                statusCode: 200,
+                ..CORS_HEADERS,
+                'body': record }
         }
         catch {
             return { statusCode: 500, 'body': 'noe gikk galt' }

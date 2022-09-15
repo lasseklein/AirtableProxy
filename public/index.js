@@ -16,7 +16,7 @@ const json = {
     }
 }
 
-fetch("https://atproxy.netlify.app/.netlify/functions/feedbackproxy",         {
+if(0)fetch("https://atproxy.netlify.app/.netlify/functions/feedbackproxy",         {
     method: "POST",
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify(json)

@@ -4,7 +4,7 @@ const endPoint = "/.netlify/functions/feedbackproxy"
 function handleSubmit(event) {
     event.preventDefault()
     document.querySelector(".star-widget").style.display = "none"
-    document.querySelector(".post").style.display = "block"
+    document.querySelector(".posted").style.display = "block"
 
     const { rating, reason } = event.target.elements
 
@@ -16,7 +16,7 @@ function handleSubmit(event) {
             "Reason": reason.value,
             "OtherReason": "Test",
             "Product": "Test i prod",
-            "Referrer": "Postman",
+            "Referrer": "Prod",
             "Browser": "None"
         }
     }
@@ -32,5 +32,18 @@ function handleSubmit(event) {
     return false
 }
 
- document.querySelector("form").addEventListener('submit', handleSubmit);
+/*
+$("input[type=radio]").click(function(){
+    $("input[type=radio]:checked+label").css("opacity", "1");
+    $("input[type=radio]:not(:checked)+label").css("opacity", "0.5");
+}); //*/
 
+
+document.querySelector("form").addEventListener('submit', handleSubmit);
+
+const elm = document.querySelectorAll('.emo');
+for (i = 0; i < elm.length; i++) {
+    elm[i].addEventListener('click', function () {
+        document.querySelector("#followUp").style.display = 'block'//style.height = '100%'
+    });
+}

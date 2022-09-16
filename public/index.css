@@ -1,139 +1,103 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+html,
+body {
+    background: #fff;
 }
-.fa-regular{
-    font-weight: 900
+.star-widget * {
 }
-html,body{
-    display: grid;
-    height: 100%;
-    place-items: center;
-    text-align: center;
-    background: #000;
-}
-.container{
-    position: relative;
-    width: 400px;
-    background: #111;
-    padding: 20px 30px;
-    border: 1px solid #444;
-    border-radius: 5px;
+.flex {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: left;
+}
+.flex.row {
+    flex-direction: row;
+    column-gap: 2rem;
+}
+.flex.col {
+    justify-content: space-between;
     flex-direction: column;
+    row-gap: 1rem;
 }
-.container .post{
+
+.star-widget {
+    width: 100%;
+    color: #000;
+    max-width: 640px;
+    margin: 24px;
+    padding: 16px 16px;
+    box-sizing: border-box;
+    font: normal normal 800 14px/24px "Helvetica", sans-serif;
+    position: relative;
+    background: #fff;
+    border: 4px solid #f5e4c7;
+    border-radius: 4px;
+}
+.star-widget form {
+    width: 100%;
+}
+.star-widget .posted {
     display: none;
 }
-.container .text{
-    font-size: 25px;
-    color: #666;
-    font-weight: 500;
+.star-widget .question {
+    font-size: 1.5rem;
 }
-.container .edit{
-    position: absolute;
-    right: 10px;
-    top: 5px;
-    font-size: 16px;
-    color: #666;
-    font-weight: 500;
-    cursor: pointer;
+.content,
+.stars,
+.scale {
+    width: 100%;
 }
-.container .edit:hover{
-    text-decoration: underline;
-}
-.container .star-widget input{
+.emoInput {
     display: none;
 }
-.star-widget label{
-    font-size: 40px;
-    color: #444;
-    padding: 10px;
-    float: right;
-    transition: all 0.2s ease;
+.emo {
+    font-size: 2rem;
+    padding: 1rem;
+    transition: all 0.25s ease-in-out;
+    opacity: 100%;
 }
-input:not(:checked) + label:hover{
-    color: #fd4;
+
+.emo:hover {
+    scale: 115%;
 }
-input:checked + label{
-    color: #fd4;
+
+.emoInput:checked + .emo {
+    scale: 130%;
 }
-xinput#rate-5:checked  label{
-    color: #fe7;
-    text-shadow: 0 0 20px #952;
-}
-#xrate-1:checked ~ #followUp header:before{
-    content: "I just hate it ";
-}
-#xrate-2:checked ~ #followUp header:before{
-    content: "I don't like it ";
-}
-#xrate-3:checked ~ #followUp header:before{
-    content: "It is awesome ";
-}
-#xrate-4:checked ~ #followUp header:before{
-    content: "I just like it ";
-}
-#xrate-5:checked ~ #followUp header:before{
-    content: "I just love it ";
-}
-.container #followUp{
-    display: none;
-}
-input:checked ~ #followUp{
+.emoInput:checked ~ #followUp {
     display: block;
 }
-#followUp header{
-    width: 100%;
-    font-size: 25px;
-    color: #fe7;
-    font-weight: 500;
-    margin: 5px 0 20px 0;
-    text-align: center;
-    transition: all 0.2s ease;
-}
-#followUp .textarea{
-    height: 100px;
-    width: 100%;
+
+#followUp {
     overflow: hidden;
+    display: none;
+    transition: height .4s ease-in-out;
 }
-#followUp .textarea textarea{
-    height: 100%;
-    width: 100%;
-    outline: none;
-    color: #eee;
-    border: 1px solid #333;
-    background: #222;
-    padding: 10px;
-    font-size: 17px;
+
+#followUp textarea {
+    color: #000;
+    font-size: 1.5rem;
+    border: 2px solid #333;
+    background: #fff;
     resize: none;
 }
-.textarea textarea:focus{
-    border-color: #444;
+#followUp textarea:focus {
+    border-color: #666;
 }
-#followUp .btn{
+
+#followUp .button {
     height: 45px;
     width: 100%;
     margin: 15px 0;
 }
-#followUp .btn button{
-    height: 100%;
-    width: 100%;
-    border: 1px solid #444;
-    outline: none;
-    background: #222;
-    color: #999;
-    font-size: 17px;
-    font-weight: 500;
-    text-transform: uppercase;
+#followUp .button button {
+    height: 48px;
+    background: #bf0900;
+    color: #fff;
+    font-size: 1.5rem;
     cursor: pointer;
     transition: all 0.3s ease;
 }
-#followUp .btn button:hover{
+#followUp .button button:hover {
     background: #1b1b1b;
 }
+

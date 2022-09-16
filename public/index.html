@@ -1,46 +1,53 @@
 <html xmlns="http://www.w3.org/1999/html">
+
 <head>
     <title>Test</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" lang="js" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+    <link rel="stylesheet"  href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
 </head>
 
 <body>
 
-<div class="container">
-    <div class="post">
-        <div class="text">Takk for at du hjelper oss &aring; bli bedre</div>
-        <!--<div class="edit">Endre</div> -->
-    </div>
-    <div class="star-widget">
-        <form action="#">
+<div class="star-widget">
+    <form action="#">
 
-            <div class="text">Fant du det du lette etter?</div>
-            <input type="radio" name="rating" id="rate-5" value="5">
-            <label for="rate-5" class="fa-regular fa-face-laugh"></label>
-            <input type="radio" name="rating" id="rate-4" value="4">
-            <label for="rate-4" class="fa-regular fa-face-smile"></label>
-            <input type="radio" name="rating" id="rate-3" value="3">
-            <label for="rate-3" class="fa-regular fa-face-meh"></label>
-            <input type="radio" name="rating" id="rate-2" value="2">
-            <label for="rate-2" class="fa-regular fa-face-frown"></label>
-            <input type="radio" name="rating" id="rate-1" value="1">
-            <label for="rate-1" class="fa-regular fa-face-angry"></label>
-            <div id="followUp">
-                <header></header>
-                <div class="textarea" >
-                    <label for="reason" class="text">Fortell oss gjerne litt mer</label>
-                    <textarea cols="30" placeholder="" id="reason" name="reason"></textarea>
-                </div>
-                <div class="btn">
-                    <button type="submit">Send</button>
-                </div>
+        <div class="content flex row">
+            <div class="posted">
+                <div class="text">Takk for at du hjelper oss &aring; bli bedre!</div>
             </div>
-        </form>
-    </div>
+
+            <div class="stars flex col">
+                <div class="question">Fant du det du lette etter?</div>
+                <div class="scale flex">
+                    <input type="radio" class="emoInput" name="rating" id="rate-5" value="5">
+                    <label for="rate-5" class="emo"><svg xmlns="http://www.w3.org/2000/svg" width="1.7em" height="1.7em" fill="" viewBox="0 0 25 25" ><title>Extremely unhelpful</title><circle fill="rgba(245,228,199,1)" cx="12" cy="12" r="12"></circle><path fill="rgba(27,27,27,1)" d="M7.47778 18.9319C8.14798 16.2511 10.1092 15 12.0002 15C13.8911 15 15.8524 16.2511 16.5226 18.9319C16.623 19.3337 17.0302 19.578 17.4321 19.4776C17.8339 19.3771 18.0782 18.9699 17.9778 18.5681C17.148 15.2489 14.6092 13.5 12.0002 13.5C9.39113 13.5 6.85237 15.2489 6.02257 18.5681C5.92211 18.9699 6.16643 19.3771 6.56828 19.4776C6.97012 19.5781 7.37732 19.3337 7.47778 18.9319Z"></path><path fill="rgba(27,27,27,1)" d="M9.75 8.25C10.1642 8.25 10.5 8.58579 10.5 9C10.5 10.5259 9.46055 11.5199 8.27801 11.8746C7.11746 12.2228 5.69343 12.0041 4.71967 11.0303C4.42678 10.7374 4.42678 10.2626 4.71967 9.96967C5.01256 9.67678 5.48744 9.67678 5.78033 9.96967C6.30657 10.4959 7.13254 10.6522 7.84699 10.4379C8.53945 10.2301 9 9.72409 9 9C9 8.58579 9.33579 8.25 9.75 8.25Z"></path><path fill="rgba(27,27,27,1)" d="M15 9C15 8.58579 14.6642 8.25 14.25 8.25C13.8358 8.25 13.5 8.58579 13.5 9C13.5 10.6157 14.8391 11.5574 16.0214 11.8798C16.6356 12.0473 17.3018 12.0835 17.8991 11.9456C18.494 11.8084 19.1015 11.474 19.4208 10.8354C19.6061 10.4649 19.4559 10.0144 19.0854 9.82918C18.7149 9.64394 18.2644 9.79411 18.0792 10.1646C18.0235 10.276 17.881 10.4104 17.5618 10.4841C17.245 10.5572 16.8331 10.5464 16.4161 10.4327C15.5359 10.1926 15 9.63434 15 9Z"></path><path fill="rgba(27,27,27,1)" fill-rule="evenodd" clip-rule="evenodd" d="M24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12ZM22.5 12C22.5 17.799 17.799 22.5 12 22.5C6.20101 22.5 1.5 17.799 1.5 12C1.5 6.20101 6.20101 1.5 12 1.5C17.799 1.5 22.5 6.20101 22.5 12Z"></path></svg></label>
+                    <input type="radio" class="emoInput" name="rating" id="rate-4" value="4">
+                    <label for="rate-4" class="emo"><svg xmlns="http://www.w3.org/2000/svg" width="1.7em" height="1.7em" fill="" viewBox="0 0 25 25" ><title>Somewhat unhelpful</title><circle fill="rgba(245,228,199,1)" cx="12" cy="12" r="12"></circle><path fill="rgba(39,39,39,1)" d="M8.25 10.5003C7.42157 10.5003 6.75 9.8287 6.75 9.00028C6.75 8.17185 7.79657 7.49561 8.625 7.49561C9.45343 7.49561 9.75 8.17185 9.75 9.00028C9.75 9.8287 9.07843 10.5003 8.25 10.5003Z"></path><path fill="rgba(39,39,39,1)" d="M14.25 9C14.25 9.82843 14.9216 10.5 15.75 10.5C16.5784 10.5 17.25 9.82843 17.25 9C17.25 8.17157 16.2034 7.5 15.375 7.5C14.5466 7.5 14.25 8.17157 14.25 9Z"></path><path fill="rgba(39,39,39,1)" d="M6.21967 17.0303C6.51256 17.3232 6.98743 17.3232 7.28033 17.0303C9.98743 14.3232 14.0126 14.3232 16.7197 17.0303C17.0126 17.3232 17.4874 17.3232 17.7803 17.0303C18.0732 16.7374 18.0732 16.2625 17.7803 15.9696C14.4874 12.6768 9.51257 12.6768 6.21967 15.9696C5.92678 16.2625 5.92678 16.7374 6.21967 17.0303Z"></path><path fill="rgba(39,39,39,1)" fill-rule="evenodd" clip-rule="evenodd" d="M24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12ZM22.5 12C22.5 17.799 17.799 22.5 12 22.5C6.20101 22.5 1.5 17.799 1.5 12C1.5 6.20101 6.20101 1.5 12 1.5C17.799 1.5 22.5 6.20101 22.5 12Z"></path></svg></label>
+                    <input type="radio" class="emoInput" name="rating" id="rate-3" value="3">
+                    <label for="rate-3" class="emo"><svg xmlns="http://www.w3.org/2000/svg" width="1.7em" height="1.7em" fill="" viewBox="0 0 25 25"><title>Neither helpful nor unhelpful</title><circle fill="rgba(245,228,199,1)" cx="12" cy="12" r="12"></circle><path fill="rgba(39,39,39,1)" fill-rule="evenodd" clip-rule="evenodd" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"></path><path fill="rgba(39,39,39,1)" d="M6.75 10.5C6.75 11.3284 7.42157 12 8.25 12C9.07843 12 9.75 11.3284 9.75 10.5C9.75 9.67157 9.07843 9 8.25 9C7.42157 9 6.75 9.67157 6.75 10.5Z"></path><path fill="rgba(39,39,39,1)" d="M14.25 10.5C14.25 11.3284 14.9216 12 15.75 12C16.5784 12 17.25 11.3284 17.25 10.5C17.25 9.67157 16.5784 9 15.75 9C14.9216 9 14.25 9.67157 14.25 10.5Z"></path><path fill="rgba(39,39,39,1)" fill-rule="evenodd" clip-rule="evenodd" d="M6.75 16.5C6.75 16.0858 7.08579 15.75 7.5 15.75H16.5C16.9142 15.75 17.25 16.0858 17.25 16.5C17.25 16.9142 16.9142 17.25 16.5 17.25H7.5C7.08579 17.25 6.75 16.9142 6.75 16.5Z"></path></svg></label>
+                    <input type="radio" class="emoInput" name="rating" id="rate-2" value="2">
+                    <label for="rate-2" class="emo"><svg xmlns="http://www.w3.org/2000/svg" width="1.7em" height="1.7em" fill="" viewBox="0 0 25 25" ><title>Somewhat helpful</title><circle fill="rgba(245,228,199,1)" cx="12" cy="12" r="12"></circle><path fill="rgba(39,39,39,1)" fill-rule="evenodd" clip-rule="evenodd" d="M12 22.5C17.799 22.5 22.5 17.799 22.5 12C22.5 6.20101 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.20101 1.5 12C1.5 17.799 6.20101 22.5 12 22.5ZM12 24C18.6274 24 24 18.6274 24 12C24 5.37258 18.6274 0 12 0C5.37258 0 0 5.37258 0 12C0 18.6274 5.37258 24 12 24Z"></path><path fill="rgba(39,39,39,1)" d="M6.75 9C6.75 9.82843 7.42157 10.5 8.25 10.5C9.07843 10.5 9.75 9.82843 9.75 9C9.75 8.17157 9.07843 7.5 8.25 7.5C7.42157 7.5 6.75 8.17157 6.75 9Z"></path><path fill="rgba(39,39,39,1)" d="M14.25 9C14.25 9.82843 14.9216 10.5 15.75 10.5C16.5784 10.5 17.25 9.82843 17.25 9C17.25 8.17157 16.5784 7.5 15.75 7.5C14.9216 7.5 14.25 8.17157 14.25 9Z"></path><path fill="rgba(39,39,39,1)" fill-rule="evenodd" clip-rule="evenodd" d="M5.1267 12.7602C5.53528 12.6921 5.9217 12.9681 5.9898 13.3767C6.08767 13.964 6.57281 15.14 7.569 16.1647C8.54281 17.1663 9.98119 18 12 18C14.0188 18 15.4572 17.1663 16.431 16.1647C17.4272 15.14 17.9123 13.964 18.0102 13.3767C18.0783 12.9681 18.4647 12.6921 18.8733 12.7602C19.2819 12.8283 19.5579 13.2147 19.4898 13.6233C19.3377 14.536 18.6978 15.985 17.5065 17.2103C16.2928 18.4587 14.4812 19.5 12 19.5C9.51881 19.5 7.70719 18.4587 6.4935 17.2103C5.30219 15.985 4.66233 14.536 4.5102 13.6233C4.44211 13.2147 4.71812 12.8283 5.1267 12.7602Z"></path></svg></label>
+                    <input type="radio" class="emoInput" name="rating" id="rate-1" value="1">
+                    <label for="rate-1" class="emo"><svg xmlns="http://www.w3.org/2000/svg" width="1.7em" height="1.7em" fill="" viewBox="0 0 25 25" ><title>Extremely helpful</title><circle fill="rgba(245,228,199,1)" cx="12" cy="12" r="12"></circle><path fill="rgba(39,39,39,1)" fill-rule="evenodd" clip-rule="evenodd" d="M22.5 12C22.5 17.799 17.799 22.5 12 22.5C6.20101 22.5 1.5 17.799 1.5 12C1.5 6.20101 6.20101 1.5 12 1.5C17.799 1.5 22.5 6.20101 22.5 12ZM24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12ZM5.97114 7.89354C6.40678 6.36882 8.59322 6.36882 9.02886 7.89355C9.14265 8.29182 9.55776 8.52244 9.95604 8.40865C10.3543 8.29486 10.5849 7.87974 10.4711 7.48147C9.62107 4.50618 5.37894 4.50618 4.52886 7.48146C4.41506 7.87973 4.64568 8.29485 5.04396 8.40864C5.44224 8.52243 5.85735 8.29181 5.97114 7.89354ZM18.0289 7.89355C17.5932 6.36882 15.4068 6.36882 14.9711 7.89354C14.8573 8.29181 14.4422 8.52243 14.044 8.40864C13.6457 8.29485 13.4151 7.87973 13.5289 7.48146C14.3789 4.50618 18.6211 4.50618 19.4711 7.48147C19.5849 7.87974 19.3543 8.29486 18.956 8.40865C18.5578 8.52244 18.1426 8.29182 18.0289 7.89355ZM3.87148 11.9863C4.33952 14.5257 5.94773 20.272 12 20.272C18.0523 20.272 19.6605 14.5257 20.1285 11.9863C20.2036 11.5793 19.9206 11.2013 19.5105 11.1459C18.0122 10.9436 14.5447 10.5161 12 10.5161C9.4553 10.5161 5.98784 10.9436 4.48955 11.1459C4.07935 11.2013 3.79645 11.5793 3.87148 11.9863ZM11.9994 15.394C14.7687 15.394 15.8606 16.7287 16.2672 17.5336C15.7198 17.9706 14.201 19.0055 12.0958 19.0055C9.95983 19.0055 8.33626 18.0163 7.77319 17.6214C8.16704 16.781 9.23568 15.394 11.9994 15.394Z"></path></svg></label>
+                </div>
+                <div id="followUp" class="flex col">
+                    <label for="reason" class="question">Fortell oss gjerne litt mer</label>
+
+                    <textarea rows="5" class="textarea" placeholder="" id="reason" name="reason">
+              </textarea>
+
+                    <div class="button">
+                        <button type="submit">Send inn ditt svar</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </form>
 </div>
-<script src="index.js"></script>
+<script lang="js" src="index.js"></script>
 
 </body>
+
 </html>

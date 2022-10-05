@@ -1,14 +1,14 @@
 const Airtable = require('airtable')
 Airtable.configure({apiKey: process.env.AIRTABLE_API_KEY})
 const CORS_HEADERS = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Methods": "GET, POST, OPTIONS"
+    "Access-Control-Allow-Origin"  : "*",
+    "Access-Control-Allow-Headers" : "Content-Type",
+    "Access-Control-Allow-Methods" : "GET, POST, OPTIONS"
 }
 
 const projects = {
-    "MyPages": {
-        "baseID": 'appYKMog2dsOA8Esn',
+    "MyPages" : {
+        "baseID" : 'appYKMog2dsOA8Esn',
         "pages" : {
             "Cancel": 'FeedbackForm'
         }
@@ -18,7 +18,8 @@ const projects = {
 const airtablePromise = (base, pageID, data) => {
     return new Promise((resolve, reject) => {
         base(pageID).create(
-            data, {typecast: true},
+            data,
+            {typecast: true},
             (err, records) => {
                 if (err) return reject(err)
                 resolve(records)
@@ -30,16 +31,16 @@ const airtablePromise = (base, pageID, data) => {
 exports.handler = async (event) => {
     if (event.httpMethod === "OPTIONS") {
         return {
-            'statusCode': 200,
-            'headers'   : CORS_HEADERS,
-            'body'      : JSON.stringify({message: "Successful preflight call."}),
+            'statusCode' : 200,
+            'headers'    : CORS_HEADERS,
+            'body'       : JSON.stringify({message: "Successful preflight call."}),
         }
     }
 
     if (event.httpMethod === 'POST') {
         const body     = JSON.parse(event.body)
         const feedBack = body['feedback']
-        const data     = [{ 'fields': feedBack }]
+        const data     = [{ 'fields' : feedBack }]
 
         const project  = projects[ body['project'] ]
         const baseID   = project['baseID']
@@ -50,21 +51,21 @@ exports.handler = async (event) => {
             const records = await airtablePromise(base, pageID, data)
             const record = (records.length) ? records[0].getId() : ''
             return {
-                'statusCode': 200,
-                'headers'   : CORS_HEADERS,
-                'body'      : record
+                'statusCode' : 200,
+                'headers'    : CORS_HEADERS,
+                'body'       : record
             }
         }
         catch {
             return {
-                'statusCode': 500,
-                'body'      : 'Bugger!'
+                'statusCode' : 500,
+                'body'       : 'Bugger!'
             }
         }
     }
 
     return {
-        'statusCode': 500,
-        'body'      : 'All your base are belong to us'
+        'statusCode' : 500,
+        'body'       : 'All your base are belong to us'
     }
 }

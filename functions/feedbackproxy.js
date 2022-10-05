@@ -19,7 +19,7 @@ const airtablePromise = (base, pageID, data) => {
     return new Promise((resolve, reject) => {
         base(pageID).create(
             data,
-            {typecast: true},
+            { 'typecast' : true },
             (err, records) => {
                 if (err) return reject(err)
                 resolve(records)
@@ -33,7 +33,7 @@ exports.handler = async (event) => {
         return {
             'statusCode' : 200,
             'headers'    : CORS_HEADERS,
-            'body'       : JSON.stringify({message: "Successful preflight call."}),
+            'body'       : JSON.stringify({ message : "Successful preflight call" }),
         }
     }
 

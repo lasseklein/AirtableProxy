@@ -30,9 +30,9 @@ const airtablePromise = (base, pageID, data) => {
 exports.handler = async (event) => {
     if (event.httpMethod === "OPTIONS") {
         return {
-            statusCode: 200,
-            headers: CORS_HEADERS,
-            body: JSON.stringify({message: "Successful preflight call."}),
+            'statusCode': 200,
+            'headers': CORS_HEADERS,
+            'body': JSON.stringify({message: "Successful preflight call."}),
         }
     }
     else if (event['httpMethod'] === 'POST') {
@@ -42,18 +42,21 @@ exports.handler = async (event) => {
         const pageID   = project['pages'][ body['page'] ]
         const feedBack = body['feedback']
         const base     = Airtable.base(baseID)
-        const data     = [{ 'fields': feedBack  }]
+        const data     = [{ 'fields': feedBack }]
 
         try {
             const records = await airtablePromise(base, pageID, data)
             const record = (records.length) ? records[0].getId() : ''
             return {
-                statusCode: 200,
-                headers: CORS_HEADERS,
+                'statusCode': 200,
+                'headers': CORS_HEADERS,
                 'body': record }
         }
         catch {
-            return { statusCode: 500, 'body': 'noe gikk galt' }
+            return {
+                'statusCode': 500,
+                'body': 'Bugger!'
+            }
         }
     }
     return { statusCode: 500, body: 'Bummer!' }

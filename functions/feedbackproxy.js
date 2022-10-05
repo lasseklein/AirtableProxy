@@ -51,7 +51,8 @@ exports.handler = async (event) => {
             return {
                 'statusCode': 200,
                 'headers'   : CORS_HEADERS,
-                'body'      : record }
+                'body'      : record
+            }
         }
         catch {
             return {

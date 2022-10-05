@@ -35,7 +35,8 @@ exports.handler = async (event) => {
             'body'      : JSON.stringify({message: "Successful preflight call."}),
         }
     }
-    else if (event.httpMethod === 'POST') {
+
+    if (event.httpMethod === 'POST') {
         const body     = JSON.parse(event.body)
         const feedBack = body['feedback']
         const data     = [{ 'fields': feedBack }]
@@ -61,8 +62,9 @@ exports.handler = async (event) => {
             }
         }
     }
+
     return {
         'statusCode': 500,
-        'body': 'Bummer!'
+        'body'      : 'All your base are belong to us'
     }
 }

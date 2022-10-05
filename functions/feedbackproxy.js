@@ -3,7 +3,7 @@ Airtable.configure({apiKey: process.env.AIRTABLE_API_KEY})
 const CORS_HEADERS = {
     "Access-Control-Allow-Origin"  : "*",
     "Access-Control-Allow-Headers" : "Content-Type",
-    "Access-Control-Allow-Methods" : "GET, POST, OPTIONS"
+    "Access-Control-Allow-Methods" : "POST, OPTIONS"
 }
 
 const projects = {
